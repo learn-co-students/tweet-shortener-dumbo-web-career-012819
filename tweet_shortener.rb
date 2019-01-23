@@ -16,12 +16,15 @@ def word_substituter(tweet)
   
   new_tweet << tweet.split(" ")
   
-  new_tweet.map do |word| puts word == dictionary.keys
+  new_tweet.map do |word| 
+    if dictionary.keys.include?(word)
+      word = dictionary[word]
+    else
+      word
+    end
+  end.join(" ")
  
- end.join(" ")
  
- 
- 
- end
+
 end
 
